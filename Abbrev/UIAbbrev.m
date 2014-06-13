@@ -352,7 +352,6 @@
 @implementation UIImage (Abbrev)
 
 @import Accelerate;
-#import <float.h>
 
 - (NSData *)toJPEGData
 {
@@ -473,8 +472,8 @@
     CGRect imageRect = { CGPointZero, self.size };
     UIImage *effectImage = self;
     
-    BOOL hasBlur = blurRadius > __FLT_EPSILON__;
-    BOOL hasSaturationChange = fabs(1.f - 1.) > __FLT_EPSILON__;
+    BOOL hasBlur = blurRadius > FLT_EPSILON;
+    BOOL hasSaturationChange = fabs(1.f - 1.) > FLT_EPSILON;
     if (hasBlur || hasSaturationChange) {
         UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
         CGContextRef effectInContext = UIGraphicsGetCurrentContext();
