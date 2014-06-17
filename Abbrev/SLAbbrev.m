@@ -142,27 +142,19 @@
 @end
 
 @implementation SLComposeViewController (Abbrev)
-- (instancetype)initForTwitterWithText:(NSString *)text url:(NSURL *)url
++ (instancetype)initForTwitterWithText:(NSString *)text url:(NSURL *)url
 {
-    self = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    if (self)
-    {
-        [self setInitialText:text];
-        [self addURL:url];
-    }
-    
-    return self;
+    SLComposeViewController *v = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [v setInitialText:text];
+    [v addURL:url];
+    return v;
 }
 
-- (instancetype)initForFacebookWithText:(NSString *)text url:(NSURL *)url
++ (instancetype)initForFacebookWithText:(NSString *)text url:(NSURL *)url
 {
-    self = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    if (self)
-    {
-        [self setInitialText:text];
-        [self addURL:url];
-    }
-    
-    return self;
+    SLComposeViewController *v = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [v setInitialText:text];
+    [v addURL:url];
+    return v;
 }
 @end
