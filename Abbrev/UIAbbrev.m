@@ -588,6 +588,8 @@
 + (UILocalNotification *)notificationWithTitle:(NSString *)title date:(NSDate *)date
 {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.alertBody = title;
+    localNotification.fireDate = date;
     return localNotification;
 }
 @end
