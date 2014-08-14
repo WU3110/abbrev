@@ -129,8 +129,7 @@
 - (NSString *)toString:(NSString *)fmt
 {
     NSDateFormatter *dateFmt = [NSDateFormatter new];
-    dateFmt.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
+    dateFmt.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     dateFmt.timeZone = [NSTimeZone systemTimeZone];
     dateFmt.dateFormat = fmt;
 
@@ -140,9 +139,7 @@
 - (NSString *)toStringGMT:(NSString *)fmt
 {
     NSDateFormatter *dateFmt = [NSDateFormatter new];
-    dateFmt.calendar
-    = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
+    dateFmt.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     dateFmt.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
     dateFmt.dateFormat = fmt;
 
@@ -652,7 +649,7 @@
 - (NSDate *)toDateWithDefaultFormat
 {
     NSDateFormatter *fmt = [NSDateFormatter new];
-    fmt.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    fmt.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     fmt.dateFormat = @"yyyy/MM/dd HH:mm:ss";
     
     return [fmt dateFromString:self];
@@ -662,7 +659,7 @@
 {
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.calendar
-    = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     formatter.dateFormat = fmt;
     formatter.timeZone = [NSTimeZone systemTimeZone];
     return [formatter dateFromString:self];
@@ -672,7 +669,7 @@
 {
     NSDateFormatter* formatter = [NSDateFormatter new];
     formatter.calendar
-    = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     formatter.dateFormat = fmt;
     formatter.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
     return [formatter dateFromString:self];

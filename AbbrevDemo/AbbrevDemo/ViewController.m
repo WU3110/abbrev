@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 
+#import "Abbrev.h"
+
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -17,7 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    _label.text = [[NSDate date] toStringGMT:@"yyyy-MM-dd"];
 }
 
 - (void)didReceiveMemoryWarning
