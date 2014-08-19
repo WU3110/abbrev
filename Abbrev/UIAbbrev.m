@@ -230,7 +230,7 @@
 // Color
 //
 @implementation UIColor (Abbrev)
-+ (id)colorWithR:(NSInteger)red G:(NSInteger)green B:(NSInteger)blue A:(CGFloat)alpha
++ (UIColor *)colorWithR:(NSInteger)red G:(NSInteger)green B:(NSInteger)blue A:(CGFloat)alpha
 {
     return [UIColor colorWithRed:red*1.f/255.f
                            green:green*1.f/255.f
@@ -238,7 +238,7 @@
                            alpha:alpha];
 }
 
-+ (id)colorWithHexString:(NSString *)hex alpha:(CGFloat)a
++ (UIColor *)colorWithHexString:(NSString *)hex alpha:(CGFloat)a
 {
     NSScanner *colorScanner = [NSScanner scannerWithString:hex];
     unsigned int color;

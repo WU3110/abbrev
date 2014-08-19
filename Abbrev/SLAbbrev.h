@@ -31,6 +31,6 @@
 @end
 
 @interface SLComposeViewController (Abbrev)
-+ (instancetype)composeVCForTwitterWithText:(NSString *)text url:(NSURL *)url;
-+ (instancetype)composeVCForFacebookWithText:(NSString *)text url:(NSURL *)url;
++ (SLComposeServiceViewController *)composeVCForTwitterWithText:(NSString *)text url:(NSURL *)url;
++ (SLComposeServiceViewController *)composeVCForFacebookWithText:(NSString *)text url:(NSURL *)url;
 @end

@@ -77,8 +77,8 @@
  * C
  */
 @interface UIColor (Abbrev)
-+ (id)colorWithR:(NSInteger)red G:(NSInteger)green B:(NSInteger)blue A:(CGFloat)alpha;
-+ (id)colorWithHexString:(NSString *)hex alpha:(CGFloat)alpha;
++ (UIColor *)colorWithR:(NSInteger)red G:(NSInteger)green B:(NSInteger)blue A:(CGFloat)alpha;
++ (UIColor *)colorWithHexString:(NSString *)hex alpha:(CGFloat)alpha;
 //+ (id)flatCarrotColor;
 //+ (id)flatTurquoiseColor;
 //+ (id)flatSkyBlueColor;
