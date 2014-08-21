@@ -26,6 +26,8 @@
 		D937CC04194A8DE0005D0D51 /* NSAbbrev.m in Sources */ = {isa = PBXBuildFile; fileRef = D937CBFD194A8DE0005D0D51 /* NSAbbrev.m */; };
 		D937CC05194A8DE0005D0D51 /* SLAbbrev.m in Sources */ = {isa = PBXBuildFile; fileRef = D937CBFF194A8DE0005D0D51 /* SLAbbrev.m */; };
 		D937CC06194A8DE0005D0D51 /* UIAbbrev.m in Sources */ = {isa = PBXBuildFile; fileRef = D937CC01194A8DE0005D0D51 /* UIAbbrev.m */; };
+		D94EC11D19A5A01E00183E67 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94EC11C19A5A01E00183E67 /* Accounts.framework */; };
+		D94EC11F19A5A02200183E67 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94EC11E19A5A02200183E67 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		D937CC00194A8DE0005D0D51 /* UIAbbrev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAbbrev.h; sourceTree = "<group>"; };
 		D937CC01194A8DE0005D0D51 /* UIAbbrev.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAbbrev.m; sourceTree = "<group>"; };
 		D93EEC2A199CFDBA00948F2F /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		D94EC11C19A5A01E00183E67 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D94EC11E19A5A02200183E67 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94EC11F19A5A02200183E67 /* Social.framework in Frameworks */,
+				D94EC11D19A5A01E00183E67 /* Accounts.framework in Frameworks */,
 				D937CBC3194A8D97005D0D51 /* CoreGraphics.framework in Frameworks */,
 				D937CBC5194A8D97005D0D51 /* UIKit.framework in Frameworks */,
 				D937CBC1194A8D97005D0D51 /* Foundation.framework in Frameworks */,
@@ -120,6 +126,8 @@
 		D937CBBF194A8D97005D0D51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D94EC11E19A5A02200183E67 /* Social.framework */,
+				D94EC11C19A5A01E00183E67 /* Accounts.framework */,
 				D93EEC2A199CFDBA00948F2F /* libcommonCrypto.dylib */,
 				D937CBC0194A8D97005D0D51 /* Foundation.framework */,
 				D937CBC2194A8D97005D0D51 /* CoreGraphics.framework */,

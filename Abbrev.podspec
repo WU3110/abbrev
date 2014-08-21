@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Abbrev"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "Abbrev is Assorts of Cocoa Framework Category."
   s.homepage     = "http://www.heartlay-studio.co.jp"
   s.license      = { :type => "MIT", :file => "LICENSE.txt" }
@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = { :git => "git@bitbucket.org:heartlaystudio/abbrev.git", :tag => "#{s.version}" }
   s.source_files  = "Abbrev", "Abbrev/**/*.{h,m}"
-  s.framework  = "QuartzCore"
+  s.framework  = "QuartzCore", "Social", "Accounts"
   s.requires_arc = true
 end
