@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Abbrev"
-  s.version      = "0.0.8"
+  s.version      = "0.1"
   s.summary      = "Abbrev is Assorts of Cocoa Framework Category."
   s.homepage     = "http://www.heartlay-studio.co.jp"
   s.license      = { :type => "MIT", :file => "LICENSE.txt" }
