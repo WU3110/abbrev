@@ -76,7 +76,7 @@ owner:self \
 options:nil] objectAtIndex:0]
 
 #define navigationBarColor(__color__) [[UINavigationBar appearance] setBarTintColor:__color__];
-
+#define navigationBarItemColor(__color__) [[UINavigationBar appearance] setTintColor:__color__];
 //
 // touch
 //
