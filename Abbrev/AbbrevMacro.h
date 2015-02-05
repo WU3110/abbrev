@@ -75,6 +75,8 @@ NSLog(@"%@", NSStringFromCGPoint(__point__));
 owner:self \
 options:nil] objectAtIndex:0]
 
+#define navigationBarColor(__color__) [[UINavigationBar appearance] setBarTintColor:__color__];
+
 //
 // touch
 //
