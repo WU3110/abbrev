@@ -30,7 +30,7 @@
 {
     NSString *userId = [account valueForKeyPath:@"properties.user_id"];
     NSString *urlString
-    = string(@"https://api.twitter.com/1.1/friends/ids.json?cursor=-1&user_id=%@",userId);
+    = STRING(@"https://api.twitter.com/1.1/friends/ids.json?cursor=-1&user_id=%@",userId);
 
     SLRequest*request
     = [SLRequest requestForServiceType:SLServiceTypeTwitter
@@ -62,7 +62,7 @@
 + (SLRequest *)postFacebook:(ACAccount *)account
 {
     NSString *urlString
-    = string(@"https://graph.facebook.com/%@/feed",
+    = STRING(@"https://graph.facebook.com/%@/feed",
              [account valueForKey:@"properties.uid"]);
     
     SLRequest *request

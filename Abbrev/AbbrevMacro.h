@@ -6,6 +6,8 @@
 // fundamental
 #define STRING(...) [NSString stringWithFormat:__VA_ARGS__]
 #define IS_NULL(__obj__) [__obj__ isEqual:[NSNull null]]
+#define IS_GREATER_THAN_iOS_7_1 \
+return floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1;
 
 //
 // blocks

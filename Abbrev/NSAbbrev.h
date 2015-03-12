@@ -13,8 +13,6 @@
 @interface NSArray (Abbrev)
 - (NSData *)toData;
 - (NSString *)toJSONString;
-- (NSString *)toString:(NSString *)glue;
-- (NSMutableArray *)toMutable;
 - (NSArray *)diff:(NSArray *)arr;
 @end
 
@@ -49,15 +47,7 @@
 @interface NSDictionary (Abbrev)
 - (NSString *)toJSONString;
 - (NSData *)toData;
-- (NSMutableDictionary *)toMutable;
 - (BOOL)hasKey:(NSString *)key;
-@end
-
-
-/*
- * E
- */
-@interface NSEntityDescription (Abbrev)
 @end
 
 
@@ -65,43 +55,21 @@
  * F
  */
 @interface NSFileManager (Abbrev)
-+ (BOOL)fileExists:(NSString *)path;
-+ (NSString *)fileExists:(NSString *)path
-               ext:(NSArray *)extensions;
-+ (NSArray *)listInPath:(NSString *)path;
-+ (BOOL)move:(NSString *)src
-          to:(NSString *)dst;
-+ (BOOL)copy:(NSString *)src
-          to:(NSString *)dst;
-+ (BOOL)remove:(NSString *)path;
++ (BOOL)fileExistsAtPath:(NSString *)path;
++ (NSString *)fileExistsAtPath:(NSString *)path
+                     extension:(NSArray *)extensions;
++ (NSArray *)filesInDirectoryAtPath:(NSString *)path;
 + (BOOL)makeDir:(NSString *)path;
 @end
 
-@interface NSFetchRequest (Abbrev)
-+ (NSFetchRequest *)requestWithName:(NSString *)name
-                               pred:(NSPredicate *)pred;
-+ (NSFetchRequest *)requestWithName:(NSString *)name
-                               pred:(NSPredicate *)pred
-                               sort:(NSArray *)sorts;
-+ (NSFetchRequest *)requestWithName:(NSString *)name
-                               pred:(NSPredicate *)pred
-                               sort:(NSArray *)sorts
-                              limit:(NSUInteger)limit
-                             offset:(NSUInteger)offset;
-+ (NSFetchRequest *)requestOneWithName:(NSString *)name
-                               pred:(NSPredicate *)pred;
-+ (NSFetchRequest *)requestOneWithName:(NSString *)name
-                               pred:(NSPredicate *)pred
-                               sort:(NSArray *)sorts;
-+ (NSFetchRequest *)requestOneWithName:(NSString *)name
-                               pred:(NSPredicate *)pred
-                               sort:(NSArray *)sorts
-                             offset:(NSUInteger)offset;
-@end
 
 @interface NSFetchedResultsController (Abbrev)
-+ (NSFetchedResultsController *)controllerWithRequest:(NSFetchRequest *)req
-                                              context:(NSManagedObjectContext *)c;
++ (NSFetchedResultsController *)controllerWithRequest:(NSFetchRequest *)request
+                                              context:(NSManagedObjectContext *)context;
++ (NSFetchedResultsController *)controllerWithRequest:(NSFetchRequest *)request
+                                              context:(NSManagedObjectContext *)context
+                                       sectionKeyPath:(NSString *)keyPath;
+
 @end
 
 
@@ -112,79 +80,10 @@
 + (void)clear;
 @end
 
-/*
- * M
- */
-@interface NSManagedObject (Abbrev)
-- (void)fromDictionary:(NSDictionary *)dict;
-- (NSDictionary *)toDictionary;
-@end
-
-@interface NSManagedObjectContext (Abbrev)
-+ (NSManagedObjectContext *)writerContext:(NSPersistentStoreCoordinator *)coord;
-+ (NSManagedObjectContext *)mainContext:(NSManagedObjectContext *)writer;
-
-- (NSManagedObjectContext *)createWorkingContext;
-- (BOOL)commitSync;
-- (void)commitAsync:(void (^)(NSError *error))callback;
-- (NSEntityDescription *)entityForName:(NSString *)name;
-
-- (NSManagedObject *)create:(NSString *)entityName;
-- (NSArray *)fetch:(NSFetchRequest *)req;
-- (void)remove:(NSFetchRequest *)req;
-- (NSManagedObject *)uniqueCreate:(NSString *)entityName
-                             pred:(NSPredicate *)pred;
-- (NSUInteger)count:(NSFetchRequest *)req;
-@end
-
-@interface NSManagedObjectModel (Abbrev)
-+ (NSManagedObjectModel *)modelWithMOMDFileName:(NSString *)fileName;
-@end
-
-
-/*
- * N
- */
-@interface NSNotificationCenter (Abbrev)
-+ (void)addObserver:(NSObject *)observer
-         forKeyPath:(NSString *)keyPath
-            options:(NSKeyValueObservingOptions)options
-            context:(void *)context;
-+ (void)addObserver:(id)observer
-           selector:(SEL)aSelector
-               name:(NSString *)aName
-             object:(id)anObject;
-@end
-
-
-/*
- * O
- */
-@interface NSObject (Abbrev)
-+ (void)replaceMethodWithOriginalSelector:(SEL)originalSelector
-                           swizzledMethod:(SEL)swizzledSelector;
-@end
-
-
-/*
- * P
- */
-@interface NSPersistentStoreCoordinator (Abbrev)
-+ (NSPersistentStoreCoordinator *)coordinatorWithModel:(NSManagedObjectModel *)model
-                                        sqliteFileName:(NSString *)fileName;
-+ (NSPersistentStoreCoordinator *)coordinatorWithAppName:(NSString *)name;
-@end
-
-@interface NSPredicate (Abbrev)
-@end
-
 
 /*
  * S
  */
-@interface NSSortDescriptor (Abbrev)
-@end
-
 @interface NSString (Abbrev)
 + (NSString *)generateUUID;
 + (NSString *)generateCheckableUUID;
@@ -192,11 +91,11 @@
 - (NSURL *)toFileURL;
 - (NSData *)toData;
 - (NSDate *)toDateWithDefaultFormat;
-- (NSDate *)toDateWithFormat:(NSString *)fmt;
-- (NSDate *)toDateWithFormatGMT:(NSString *)fmt;
+- (NSDate *)toDateWithFormat:(NSString *)format;
+- (NSDate *)toGMTDateWithFormat:(NSString *)format;
+- (NSDate *)toJSTDateWithFormat:(NSString *)format;
+- (NSDate *)toDateWithFormat:(NSString *)format timezone:(NSString *)timezone;
 - (NSArray *)toArray:(NSString *)delimiter;
-- (id)toObjectAsJSONString;
-- (NSMutableString *)toMutable;
 
 - (NSString *)toUnderscoreCase;
 - (NSString *)toLowerCamelCase;
@@ -208,12 +107,12 @@
 
 - (BOOL)isValidEmail;
 
-- (NSString *)joinedString:(NSString *)str;
-- (NSString *)joinedPath:(NSString *)path;
-- (NSString *)replacedString:(NSString *)q
-                     replace:(NSString *)r;
-
 - (BOOL)containsString:(NSString *)str;
+
+- (NSString *)transformHiraganaToKatakana;
+- (NSString *)transformKatakanaToHiragana;
+- (NSString *)transformFullWidthToHalfWidth;
+
 @end
 
 

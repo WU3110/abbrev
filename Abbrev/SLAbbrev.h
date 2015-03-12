@@ -24,9 +24,9 @@
 - (void)request:(void (^)(NSData *data, NSHTTPURLResponse *response))success
         failure:(void (^)(NSError *error))failure
         finally:(void (^)())finally;
-- (void)request:(blockArg(NSData *data,
-                          NSHTTPURLResponse *response,
-                          NSError *error))callback;
+//- (void)request:(blockArg(NSData *data,
+//                          NSHTTPURLResponse *response,
+//                          NSError *error))callback;
 
 @end
 
