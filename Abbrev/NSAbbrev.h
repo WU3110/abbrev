@@ -42,6 +42,8 @@
 @interface NSDate (Abbrev)
 - (NSString *)toString:(NSString *)fmt;
 - (NSString *)toStringGMT:(NSString *)fmt;
+- (BOOL)isAfter:(NSDate *)target;
+- (BOOL)isBefore:(NSDate *)target;
 @end
 
 @interface NSDictionary (Abbrev)

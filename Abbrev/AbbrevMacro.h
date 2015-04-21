@@ -80,8 +80,10 @@ dispatch_once(&onceToken, ^{sharedInstance = [[__class__ alloc] init];});return 
 #define MUTABLE_STRING [NSMutableString string]
 #define MUTABLE_ARRAY [NSMutableArray array]
 
-#define DICTIONARY_FROM_PLIST_NAME(__file__)  [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:__file__ ofType:@"plist"]]
-#define DICTIONALY_FROM_PLIST_NAME(__file__) [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:__file__ ofType:@"plist"]]
+#define DICTIONARY_FROM_PLIST_NAMED(__file__) \
+[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:__file__ ofType:@"plist"]]
+#define ARRAY_FROM_PLIST_NAMED (__file__) \
+[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:__file__ ofType:@"plist"]]
 
 
 #define PREDICATE(...) [NSPredicate predicateWithFormat:__VA_ARGS__]

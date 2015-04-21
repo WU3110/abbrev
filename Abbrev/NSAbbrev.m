@@ -110,6 +110,7 @@
 @implementation NSDate (Abbrev)
 
 - (NSString *)toString:(NSString *)fmt {
+    
     NSDateFormatter *dateFmt = [NSDateFormatter new];
     dateFmt.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     dateFmt.timeZone = [NSTimeZone systemTimeZone];
@@ -127,6 +128,17 @@
 
     return [dateFmt stringFromDate:self];
 }
+
+- (BOOL)isAfter:(NSDate *)target {
+    
+    return [self compare:target] == NSOrderedDescending;
+}
+
+- (BOOL)isBefore:(NSDate *)target {
+    
+    return [self compare:target] == NSOrderedAscending;
+}
+
 @end
 
 
