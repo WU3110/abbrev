@@ -82,7 +82,7 @@ dispatch_once(&onceToken, ^{sharedInstance = [[__class__ alloc] init];});return 
 
 #define DICTIONARY_FROM_PLIST_NAMED(__file__) \
 [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:__file__ ofType:@"plist"]]
-#define ARRAY_FROM_PLIST_NAMED (__file__) \
+#define ARRAY_FROM_PLIST_NAMED(__file__) \
 [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:__file__ ofType:@"plist"]]
 
 
