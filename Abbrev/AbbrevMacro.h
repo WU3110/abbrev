@@ -49,7 +49,7 @@ dispatch_once(&onceToken, ^{sharedInstance = [[__class__ alloc] init];});return 
 #define IS_SUBCLASS(__obj__, __target__) [[__obj__ class] isSubclassOfClass:__target__];
 #define IS_KIND_OF_CLASS(__obj__, __target__) [[__obj__ class] isKindOfClass:__target__];
 #define IS_NULL(__obj__) [__obj__ isEqual:[NSNull null]]
-
+#define NIL_OR_OBJ(__obj__) [__obj__ isEqual:[NSNull null]] ? nil : __obj__
 
 // http://flatuicolors.com/
 #define COLOR_WITH_RGB(__r__, __g__, __b__) [UIColor colorWithR:__r__ G:__g__ B:__b__ A:1.f];
