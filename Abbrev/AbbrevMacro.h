@@ -48,6 +48,7 @@ dispatch_once(&onceToken, ^{sharedInstance = [[__class__ alloc] init];});return 
 #define CLASS_NAME(__obj__) NSStringFromClass([__obj__ class])
 #define IS_SUBCLASS(__obj__, __target__) [[__obj__ class] isSubclassOfClass:__target__];
 #define IS_KIND_OF_CLASS(__obj__, __target__) [[__obj__ class] isKindOfClass:__target__];
+#define IS_NULL(__obj__) [__obj__ isEqual:[NSNull null]]
 
 
 // http://flatuicolors.com/
