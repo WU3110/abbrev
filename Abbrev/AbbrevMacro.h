@@ -88,6 +88,8 @@ dispatch_once(&onceToken, ^{sharedInstance = [[__class__ alloc] init];});return 
 
 
 #define PREDICATE(...) [NSPredicate predicateWithFormat:__VA_ARGS__]
+#define AND_PREDICATE(__array__) [NSCompoundPredicate andPredicateWithSubpredicates:__array__]
+#define OR_PREDICATE(__array__) [NSCompoundPredicate orPredicateWithSubpredicates:__array__]
 #define SORT_DESCRIPTOR(__key__, __asc__)\
 [NSSortDescriptor sortDescriptorWithKey:__key__ ascending:__asc__]
 

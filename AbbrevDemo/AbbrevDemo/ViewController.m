@@ -20,8 +20,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    _label.text = [[NSDate date] toStringGMT:@"yyyy-MM-dd"];
 }
 
 - (void)didReceiveMemoryWarning
