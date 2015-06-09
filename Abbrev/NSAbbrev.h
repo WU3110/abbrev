@@ -17,6 +17,10 @@
 @end
 
 @interface NSAttributedString (Abbrev)
+
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight;
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight lineBreakMode:(NSLineBreakMode)lineBreakMode;
+
 @end
 
 

@@ -57,6 +57,29 @@
 // NSAttributedString
 //
 @implementation NSAttributedString (Abbrev)
+
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight
+{
+    return [self ab_attribtedStringWithString:string
+                                   lineHeight:lineHeight
+                                lineBreakMode:NSLineBreakByTruncatingTail];
+}
+
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight lineBreakMode:(NSLineBreakMode)lineBreakMode
+{
+    NSMutableParagraphStyle *paragrahStyle = [[NSMutableParagraphStyle alloc] init];
+    paragrahStyle.minimumLineHeight = lineHeight;
+    paragrahStyle.maximumLineHeight = lineHeight;
+    paragrahStyle.lineBreakMode = lineBreakMode;
+    
+    NSMutableAttributedString *attributedText
+    = [[NSMutableAttributedString alloc] initWithString:string];
+    [attributedText addAttribute:NSParagraphStyleAttributeName
+                           value:paragrahStyle
+                           range:NSMakeRange(0, attributedText.length)];
+    return attributedText;
+}
+
 @end
 
 
