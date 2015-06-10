@@ -65,12 +65,29 @@
                                 lineBreakMode:NSLineBreakByTruncatingTail];
 }
 
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight textAlignment:(NSTextAlignment)textAlignment
+{
+    return [self ab_attribtedStringWithString:string
+                                   lineHeight:lineHeight
+                                textAlignment:textAlignment
+                                lineBreakMode:NSLineBreakByTruncatingTail];
+}
+
 + (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight lineBreakMode:(NSLineBreakMode)lineBreakMode
+{
+    return [self ab_attribtedStringWithString:string
+                                   lineHeight:lineHeight
+                                textAlignment:NSTextAlignmentLeft
+                                lineBreakMode:lineBreakMode];
+}
+
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode
 {
     NSMutableParagraphStyle *paragrahStyle = [[NSMutableParagraphStyle alloc] init];
     paragrahStyle.minimumLineHeight = lineHeight;
     paragrahStyle.maximumLineHeight = lineHeight;
     paragrahStyle.lineBreakMode = lineBreakMode;
+    paragrahStyle.alignment = textAlignment;
     
     NSMutableAttributedString *attributedText
     = [[NSMutableAttributedString alloc] initWithString:string];
