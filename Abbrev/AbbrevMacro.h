@@ -42,8 +42,10 @@ dispatch_once(&onceToken, ^{sharedInstance = [[__class__ alloc] init];});return 
 
 
 // Util
-#define WIN_WIDTH CGRectGetWidth([UIScreen mainScreen].bounds)
-#define WIN_HEIGHT CGRectGetHeight([[UIScreen mainScreen] bounds])
+#define SCREEN_WIDTH CGRectGetWidth([UIScreen mainScreen].bounds)
+#define SCREEN_HEIGHT CGRectGetHeight([[UIScreen mainScreen] bounds])
+#define SCREEN_WIDTH_WITH_OFFSET(__offset__) CGRectGetWidth([UIScreen mainScreen].bounds) - __offset__
+#define SCREEN_HEIGHT_WITH_OFFSET(__offset__) CGRectGetHeight([[UIScreen mainScreen] bounds]) - __offset__
 
 #define CLASS_NAME(__obj__) NSStringFromClass([__obj__ class])
 #define IS_SUBCLASS(__obj__, __target__) [[__obj__ class] isSubclassOfClass:__target__];
