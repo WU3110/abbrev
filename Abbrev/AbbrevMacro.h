@@ -42,6 +42,7 @@ dispatch_once(&onceToken, ^{sharedInstance = [[__class__ alloc] init];});return 
 
 
 // Util
+#define SCREEN_SIZE [UIScreen mainScreen].bounds.size
 #define SCREEN_WIDTH CGRectGetWidth([UIScreen mainScreen].bounds)
 #define SCREEN_HEIGHT CGRectGetHeight([[UIScreen mainScreen] bounds])
 #define SCREEN_WIDTH_WITH_OFFSET(__offset__) CGRectGetWidth([UIScreen mainScreen].bounds) - __offset__
