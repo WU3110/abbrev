@@ -58,34 +58,33 @@
 //
 @implementation NSAttributedString (Abbrev)
 
-+ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace
 {
     return [self ab_attribtedStringWithString:string
-                                   lineHeight:lineHeight
+                                   lineSpace:lineSpace
                                 lineBreakMode:NSLineBreakByTruncatingTail];
 }
 
-+ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight textAlignment:(NSTextAlignment)textAlignment
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace textAlignment:(NSTextAlignment)textAlignment
 {
     return [self ab_attribtedStringWithString:string
-                                   lineHeight:lineHeight
+                                   lineSpace:lineSpace
                                 textAlignment:textAlignment
                                 lineBreakMode:NSLineBreakByTruncatingTail];
 }
 
-+ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight lineBreakMode:(NSLineBreakMode)lineBreakMode
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace lineBreakMode:(NSLineBreakMode)lineBreakMode
 {
     return [self ab_attribtedStringWithString:string
-                                   lineHeight:lineHeight
+                                   lineSpace:lineSpace
                                 textAlignment:NSTextAlignmentLeft
                                 lineBreakMode:lineBreakMode];
 }
 
-+ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode
 {
     NSMutableParagraphStyle *paragrahStyle = [[NSMutableParagraphStyle alloc] init];
-    paragrahStyle.minimumLineHeight = lineHeight;
-    paragrahStyle.maximumLineHeight = lineHeight;
+    paragrahStyle.lineSpacing = lineSpace;
     paragrahStyle.lineBreakMode = lineBreakMode;
     paragrahStyle.alignment = textAlignment;
     
@@ -306,6 +305,7 @@
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     [cookieStorage deleteCookie:cookie];
 }
+
 @end
 
 

@@ -18,10 +18,10 @@
 
 @interface NSAttributedString (Abbrev)
 
-+ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight;
-+ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight textAlignment:(NSTextAlignment)textAlignment;
-+ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight lineBreakMode:(NSLineBreakMode)lineBreakMode;
-+ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineHeight:(CGFloat)lineHeight textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode;
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace;
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace textAlignment:(NSTextAlignment)textAlignment;
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace lineBreakMode:(NSLineBreakMode)lineBreakMode;
++ (NSAttributedString *)ab_attribtedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode;
 
 @end
 

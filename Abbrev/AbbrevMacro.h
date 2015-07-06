@@ -53,7 +53,6 @@ dispatch_once(&onceToken, ^{sharedInstance = [[__class__ alloc] init];});return 
 #define ab_is_kind_of_class(__obj__, __target__) [[__obj__ class] isKindOfClass:__target__];
 #define ab_is_null_or_obj(__obj__) [__obj__ isEqual:[NSNull null]] ? nil : __obj__
 
-// http://flatuicolors.com/
 #define ab_color_with_rgb(__r__, __g__, __b__) [UIColor colorWithR:__r__/255.f G:__g__/255.f B:__b__/255.f A:1.f];
 #define ab_color_with_rgba(__r__, __g__, __b__, __a__) [UIColor colorWithR:__r__ G:__g__ B:__b__ A:__a__];
 
