@@ -73,6 +73,11 @@
                          textColor:(UIColor *)tColor;
 + (UILabel *)labelWithAttrText:(NSString *)text
                       attrDict:(NSDictionary *)attrDict;
+
+- (void)ab_adjustHeightWithMaxWidth:(CGFloat)maxWidth
+                     constraint:(NSLayoutConstraint *)constraint;
+- (void)ab_adjustHeightWithMaxSize:(CGSize)maxSize
+                     constraint:(NSLayoutConstraint *)constraint;
 @end
 
 @interface UILocalNotification (Abbrev)

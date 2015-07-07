@@ -175,6 +175,22 @@
 {
     self.font = [UIFont fontWithName:fontName size:self.font.pointSize];
 }
+
+- (void)ab_adjustHeightWithMaxWidth:(CGFloat)maxWidth
+                      constraint:(NSLayoutConstraint *)constraint
+{
+    CGSize maxSize = CGSizeMake(maxWidth, CGFLOAT_MAX);
+    [self ab_adjustHeightWithMaxSize:maxSize
+                       constraint:constraint];
+}
+
+- (void)ab_adjustHeightWithMaxSize:(CGSize)maxSize
+                     constraint:(NSLayoutConstraint *)constraint
+{
+    CGSize labelSize = [self sizeThatFits:maxSize];
+    constraint.constant = labelSize.height;
+}
+
 @end
 
 //
