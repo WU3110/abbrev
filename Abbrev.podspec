@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source_files = "Abbrev", "Abbrev/**/*.{h,m}"
   s.framework    = "QuartzCore", "Social", "Accounts"
   s.requires_arc = true
-  s.homepage     = ""
+  s.homepage     = "https://github.com/WU3110/abbrev"
 end
